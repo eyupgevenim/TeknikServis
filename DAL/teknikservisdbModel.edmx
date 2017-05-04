@@ -1,0 +1,1376 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="teknikservisdbModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="adres">
+          <Key>
+            <PropertyRef Name="adres_" />
+          </Key>
+          <Property Name="adres_" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="acikadres" Type="nchar" MaxLength="200" />
+          <Property Name="ilce_" Type="int" />
+        </EntityType>
+        <EntityType Name="arizaliurun">
+          <Key>
+            <PropertyRef Name="arizaliurun_" />
+          </Key>
+          <Property Name="arizaliurun_" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="urunadi" Type="nchar" MaxLength="50" />
+          <Property Name="urunkodu" Type="nchar" MaxLength="30" />
+          <Property Name="arizamusterisi_" Type="int" />
+          <Property Name="aciklama" Type="nchar" MaxLength="200" />
+          <Property Name="durumu" Type="int" />
+          <Property Name="personel_" Type="int" />
+          <Property Name="ariza" Type="nchar" MaxLength="100" />
+          <Property Name="tespitedilenariza" Type="nchar" MaxLength="100" />
+          <Property Name="sifre" Type="nchar" MaxLength="20" />
+          <Property Name="teknikeleman_" Type="int" />
+          <Property Name="model" Type="nchar" MaxLength="80" />
+          <Property Name="urunaksesuar" Type="nchar" MaxLength="200" />
+          <Property Name="arizabedeli" Type="float" />
+          <Property Name="serviskapsam" Type="int" />
+          <Property Name="kayittarih" Type="datetime" />
+        </EntityType>
+        <EntityType Name="arizaliurunasamasi">
+          <Key>
+            <PropertyRef Name="arizaliurunasamasi_" />
+          </Key>
+          <Property Name="arizaliurunasamasi_" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="arizaliurun_" Type="int" />
+          <Property Name="personel_" Type="int" />
+          <Property Name="asamasayisi" Type="int" />
+          <Property Name="aciklama" Type="nchar" MaxLength="200" />
+          <Property Name="gordu" Type="bit" />
+          <Property Name="tarih" Type="datetime" />
+        </EntityType>
+        <EntityType Name="arizaliurunfotograf">
+          <Key>
+            <PropertyRef Name="arizaliurunfotograf_" />
+          </Key>
+          <Property Name="arizaliurunfotograf_" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="url" Type="nchar" MaxLength="100" />
+          <Property Name="arizaliurun_" Type="int" />
+        </EntityType>
+        <EntityType Name="arizamusterisi">
+          <Key>
+            <PropertyRef Name="arizamusterisi_" />
+          </Key>
+          <Property Name="arizamusterisi_" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="adi" Type="nchar" MaxLength="30" />
+          <Property Name="soyadi" Type="nchar" MaxLength="30" />
+          <Property Name="tel" Type="nchar" MaxLength="11" />
+          <Property Name="email" Type="nchar" MaxLength="50" />
+          <Property Name="adres_" Type="int" />
+          <Property Name="kayittarihi" Type="datetime" />
+          <Property Name="sil" Type="bit" />
+        </EntityType>
+        <EntityType Name="firma">
+          <Key>
+            <PropertyRef Name="firma_" />
+          </Key>
+          <Property Name="firma_" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="firmaadi" Type="nchar" MaxLength="50" />
+          <Property Name="tel1" Type="nchar" MaxLength="11" />
+          <Property Name="tel2" Type="nchar" MaxLength="11" />
+          <Property Name="email1" Type="nchar" MaxLength="50" />
+          <Property Name="email2" Type="nchar" MaxLength="50" />
+          <Property Name="adres_" Type="int" />
+          <Property Name="sil" Type="bit" />
+        </EntityType>
+        <EntityType Name="il">
+          <Key>
+            <PropertyRef Name="il_" />
+          </Key>
+          <Property Name="il_" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="plakakodu" Type="int" />
+          <Property Name="iladi" Type="nchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="ilce">
+          <Key>
+            <PropertyRef Name="ilce_" />
+          </Key>
+          <Property Name="ilce_" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="il_" Type="int" />
+          <Property Name="ilceadi" Type="nchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="personel">
+          <Key>
+            <PropertyRef Name="personel_" />
+          </Key>
+          <Property Name="personel_" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="tc" Type="nchar" MaxLength="11" />
+          <Property Name="adi" Type="nchar" MaxLength="30" Nullable="false" />
+          <Property Name="soyadi" Type="nchar" MaxLength="30" />
+          <Property Name="tel1" Type="nchar" MaxLength="11" />
+          <Property Name="email" Type="nchar" MaxLength="50" />
+          <Property Name="dogumtarihi" Type="date" />
+          <Property Name="sifre" Type="nchar" MaxLength="32" />
+          <Property Name="personeltip_" Type="int" />
+          <Property Name="adres_" Type="int" />
+          <Property Name="sil" Type="bit" />
+          <Property Name="cinsiyet" Type="char" MaxLength="1" />
+          <Property Name="tel2" Type="nchar" MaxLength="11" />
+          <Property Name="egitimdurum" Type="int" />
+          <Property Name="maas" Type="float" />
+        </EntityType>
+        <EntityType Name="personeltip">
+          <Key>
+            <PropertyRef Name="personeltip_" />
+          </Key>
+          <Property Name="personeltip_" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="tipadi" Type="nchar" MaxLength="30" />
+          <Property Name="aciklama" Type="nchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="urunfirsat">
+          <Key>
+            <PropertyRef Name="urunfirsat_" />
+          </Key>
+          <Property Name="urunfirsat_" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="urunsiparis_" Type="int" />
+          <Property Name="personel_" Type="int" />
+          <Property Name="asamasayisi" Type="int" />
+          <Property Name="firsattarihi" Type="datetime" />
+          <Property Name="aciklama" Type="nchar" MaxLength="200" />
+        </EntityType>
+        <EntityType Name="urunkatagori">
+          <Key>
+            <PropertyRef Name="urunkatagori_" />
+          </Key>
+          <Property Name="urunkatagori_" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="katagoriadi" Type="nchar" MaxLength="30" />
+          <Property Name="sil" Type="bit" />
+        </EntityType>
+        <EntityType Name="urunmarka">
+          <Key>
+            <PropertyRef Name="urunmarka_" />
+          </Key>
+          <Property Name="urunmarka_" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="markaadi" Type="nchar" MaxLength="30" />
+          <Property Name="sil" Type="bit" />
+        </EntityType>
+        <EntityType Name="urunmodel">
+          <Key>
+            <PropertyRef Name="urunmodel_" />
+          </Key>
+          <Property Name="urunmodel_" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="modeladi" Type="nchar" MaxLength="50" />
+          <Property Name="modelkodu" Type="nchar" MaxLength="20" />
+          <Property Name="urunmarka_" Type="int" />
+          <Property Name="ucret" Type="float" />
+          <Property Name="urunkatagori_" Type="int" />
+          <Property Name="stoksayisi" Type="int" />
+          <Property Name="sil" Type="bit" />
+          <Property Name="tarih" Type="date" />
+        </EntityType>
+        <EntityType Name="urunmusteri">
+          <Key>
+            <PropertyRef Name="urunmusteri_" />
+          </Key>
+          <Property Name="urunmusteri_" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="adi" Type="nchar" MaxLength="30" />
+          <Property Name="soyadi" Type="nchar" MaxLength="30" />
+          <Property Name="tel" Type="nchar" MaxLength="11" />
+          <Property Name="email" Type="nchar" MaxLength="50" />
+          <Property Name="adres_" Type="int" />
+          <Property Name="musteritip" Type="int" />
+          <Property Name="sil" Type="bit" />
+          <Property Name="firma_" Type="int" />
+          <Property Name="kayittarihi" Type="datetime" />
+          <Property Name="tel2" Type="nchar" MaxLength="11" />
+          <Property Name="email2" Type="nchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="urunsepeti">
+          <Key>
+            <PropertyRef Name="urunsepeti_" />
+          </Key>
+          <Property Name="urunsepeti_" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="urunmodel_" Type="int" />
+          <Property Name="urunsiparis_" Type="int" />
+          <Property Name="urunsayisi" Type="int" />
+          <Property Name="toplamucret" Type="float" />
+        </EntityType>
+        <EntityType Name="urunsiparis">
+          <Key>
+            <PropertyRef Name="urunsiparis_" />
+          </Key>
+          <Property Name="urunsiparis_" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="urunmusteri_" Type="int" />
+          <Property Name="siparistarih" Type="datetime" />
+          <Property Name="toplamucret" Type="float" />
+          <Property Name="odemetip" Type="int" />
+          <Property Name="siparisdurumu" Type="int" />
+          <Property Name="personel_" Type="int" />
+          <Property Name="satisfiyat" Type="float" />
+        </EntityType>
+        <Association Name="FK_adres_ilce">
+          <End Role="ilce" Type="Self.ilce" Multiplicity="0..1" />
+          <End Role="adres" Type="Self.adres" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ilce">
+              <PropertyRef Name="ilce_" />
+            </Principal>
+            <Dependent Role="adres">
+              <PropertyRef Name="ilce_" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_arizaliurun_arizamusterisi">
+          <End Role="arizamusterisi" Type="Self.arizamusterisi" Multiplicity="0..1" />
+          <End Role="arizaliurun" Type="Self.arizaliurun" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="arizamusterisi">
+              <PropertyRef Name="arizamusterisi_" />
+            </Principal>
+            <Dependent Role="arizaliurun">
+              <PropertyRef Name="arizamusterisi_" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_arizaliurun_personel">
+          <End Role="personel" Type="Self.personel" Multiplicity="0..1" />
+          <End Role="arizaliurun" Type="Self.arizaliurun" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="personel">
+              <PropertyRef Name="personel_" />
+            </Principal>
+            <Dependent Role="arizaliurun">
+              <PropertyRef Name="personel_" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_arizaliurunasamasi_arizaliurun">
+          <End Role="arizaliurun" Type="Self.arizaliurun" Multiplicity="0..1" />
+          <End Role="arizaliurunasamasi" Type="Self.arizaliurunasamasi" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="arizaliurun">
+              <PropertyRef Name="arizaliurun_" />
+            </Principal>
+            <Dependent Role="arizaliurunasamasi">
+              <PropertyRef Name="arizaliurun_" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_arizaliurunasamasi_personel">
+          <End Role="personel" Type="Self.personel" Multiplicity="0..1" />
+          <End Role="arizaliurunasamasi" Type="Self.arizaliurunasamasi" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="personel">
+              <PropertyRef Name="personel_" />
+            </Principal>
+            <Dependent Role="arizaliurunasamasi">
+              <PropertyRef Name="personel_" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_arizaliurunfotograf_arizaliurun">
+          <End Role="arizaliurun" Type="Self.arizaliurun" Multiplicity="0..1" />
+          <End Role="arizaliurunfotograf" Type="Self.arizaliurunfotograf" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="arizaliurun">
+              <PropertyRef Name="arizaliurun_" />
+            </Principal>
+            <Dependent Role="arizaliurunfotograf">
+              <PropertyRef Name="arizaliurun_" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_arizamusterisi_adres">
+          <End Role="adres" Type="Self.adres" Multiplicity="0..1" />
+          <End Role="arizamusterisi" Type="Self.arizamusterisi" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="adres">
+              <PropertyRef Name="adres_" />
+            </Principal>
+            <Dependent Role="arizamusterisi">
+              <PropertyRef Name="adres_" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ilce_il">
+          <End Role="il" Type="Self.il" Multiplicity="0..1" />
+          <End Role="ilce" Type="Self.ilce" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="il">
+              <PropertyRef Name="il_" />
+            </Principal>
+            <Dependent Role="ilce">
+              <PropertyRef Name="il_" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_personel_adres">
+          <End Role="adres" Type="Self.adres" Multiplicity="0..1" />
+          <End Role="personel" Type="Self.personel" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="adres">
+              <PropertyRef Name="adres_" />
+            </Principal>
+            <Dependent Role="personel">
+              <PropertyRef Name="adres_" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_personel_personeltip">
+          <End Role="personeltip" Type="Self.personeltip" Multiplicity="0..1" />
+          <End Role="personel" Type="Self.personel" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="personeltip">
+              <PropertyRef Name="personeltip_" />
+            </Principal>
+            <Dependent Role="personel">
+              <PropertyRef Name="personeltip_" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_urunfirsat_personel">
+          <End Role="personel" Type="Self.personel" Multiplicity="0..1" />
+          <End Role="urunfirsat" Type="Self.urunfirsat" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="personel">
+              <PropertyRef Name="personel_" />
+            </Principal>
+            <Dependent Role="urunfirsat">
+              <PropertyRef Name="personel_" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_urunfirsat_urunsiparis">
+          <End Role="urunsiparis" Type="Self.urunsiparis" Multiplicity="0..1" />
+          <End Role="urunfirsat" Type="Self.urunfirsat" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="urunsiparis">
+              <PropertyRef Name="urunsiparis_" />
+            </Principal>
+            <Dependent Role="urunfirsat">
+              <PropertyRef Name="urunsiparis_" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_urunmodel_urunkatagori">
+          <End Role="urunkatagori" Type="Self.urunkatagori" Multiplicity="0..1" />
+          <End Role="urunmodel" Type="Self.urunmodel" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="urunkatagori">
+              <PropertyRef Name="urunkatagori_" />
+            </Principal>
+            <Dependent Role="urunmodel">
+              <PropertyRef Name="urunkatagori_" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_urunmodel_urunmarka">
+          <End Role="urunmarka" Type="Self.urunmarka" Multiplicity="0..1" />
+          <End Role="urunmodel" Type="Self.urunmodel" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="urunmarka">
+              <PropertyRef Name="urunmarka_" />
+            </Principal>
+            <Dependent Role="urunmodel">
+              <PropertyRef Name="urunmarka_" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_urunmusteri_adres">
+          <End Role="adres" Type="Self.adres" Multiplicity="0..1" />
+          <End Role="urunmusteri" Type="Self.urunmusteri" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="adres">
+              <PropertyRef Name="adres_" />
+            </Principal>
+            <Dependent Role="urunmusteri">
+              <PropertyRef Name="adres_" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_urunmusteri_firma">
+          <End Role="firma" Type="Self.firma" Multiplicity="0..1" />
+          <End Role="urunmusteri" Type="Self.urunmusteri" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="firma">
+              <PropertyRef Name="firma_" />
+            </Principal>
+            <Dependent Role="urunmusteri">
+              <PropertyRef Name="firma_" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_urunsepeti_urunmodel">
+          <End Role="urunmodel" Type="Self.urunmodel" Multiplicity="0..1" />
+          <End Role="urunsepeti" Type="Self.urunsepeti" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="urunmodel">
+              <PropertyRef Name="urunmodel_" />
+            </Principal>
+            <Dependent Role="urunsepeti">
+              <PropertyRef Name="urunmodel_" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_urunsepeti_urunsiparis">
+          <End Role="urunsiparis" Type="Self.urunsiparis" Multiplicity="0..1" />
+          <End Role="urunsepeti" Type="Self.urunsepeti" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="urunsiparis">
+              <PropertyRef Name="urunsiparis_" />
+            </Principal>
+            <Dependent Role="urunsepeti">
+              <PropertyRef Name="urunsiparis_" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_urunsiparis_personel">
+          <End Role="personel" Type="Self.personel" Multiplicity="0..1" />
+          <End Role="urunsiparis" Type="Self.urunsiparis" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="personel">
+              <PropertyRef Name="personel_" />
+            </Principal>
+            <Dependent Role="urunsiparis">
+              <PropertyRef Name="personel_" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_urunsiparis_urunmusteri">
+          <End Role="urunmusteri" Type="Self.urunmusteri" Multiplicity="0..1" />
+          <End Role="urunsiparis" Type="Self.urunsiparis" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="urunmusteri">
+              <PropertyRef Name="urunmusteri_" />
+            </Principal>
+            <Dependent Role="urunsiparis">
+              <PropertyRef Name="urunmusteri_" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="teknikservisdbModelStoreContainer">
+          <EntitySet Name="adres" EntityType="Self.adres" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="arizaliurun" EntityType="Self.arizaliurun" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="arizaliurunasamasi" EntityType="Self.arizaliurunasamasi" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="arizaliurunfotograf" EntityType="Self.arizaliurunfotograf" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="arizamusterisi" EntityType="Self.arizamusterisi" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="firma" EntityType="Self.firma" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="il" EntityType="Self.il" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ilce" EntityType="Self.ilce" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="personel" EntityType="Self.personel" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="personeltip" EntityType="Self.personeltip" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="urunfirsat" EntityType="Self.urunfirsat" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="urunkatagori" EntityType="Self.urunkatagori" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="urunmarka" EntityType="Self.urunmarka" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="urunmodel" EntityType="Self.urunmodel" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="urunmusteri" EntityType="Self.urunmusteri" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="urunsepeti" EntityType="Self.urunsepeti" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="urunsiparis" EntityType="Self.urunsiparis" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_adres_ilce" Association="Self.FK_adres_ilce">
+            <End Role="ilce" EntitySet="ilce" />
+            <End Role="adres" EntitySet="adres" />
+          </AssociationSet>
+          <AssociationSet Name="FK_arizaliurun_arizamusterisi" Association="Self.FK_arizaliurun_arizamusterisi">
+            <End Role="arizamusterisi" EntitySet="arizamusterisi" />
+            <End Role="arizaliurun" EntitySet="arizaliurun" />
+          </AssociationSet>
+          <AssociationSet Name="FK_arizaliurun_personel" Association="Self.FK_arizaliurun_personel">
+            <End Role="personel" EntitySet="personel" />
+            <End Role="arizaliurun" EntitySet="arizaliurun" />
+          </AssociationSet>
+          <AssociationSet Name="FK_arizaliurunasamasi_arizaliurun" Association="Self.FK_arizaliurunasamasi_arizaliurun">
+            <End Role="arizaliurun" EntitySet="arizaliurun" />
+            <End Role="arizaliurunasamasi" EntitySet="arizaliurunasamasi" />
+          </AssociationSet>
+          <AssociationSet Name="FK_arizaliurunasamasi_personel" Association="Self.FK_arizaliurunasamasi_personel">
+            <End Role="personel" EntitySet="personel" />
+            <End Role="arizaliurunasamasi" EntitySet="arizaliurunasamasi" />
+          </AssociationSet>
+          <AssociationSet Name="FK_arizaliurunfotograf_arizaliurun" Association="Self.FK_arizaliurunfotograf_arizaliurun">
+            <End Role="arizaliurun" EntitySet="arizaliurun" />
+            <End Role="arizaliurunfotograf" EntitySet="arizaliurunfotograf" />
+          </AssociationSet>
+          <AssociationSet Name="FK_arizamusterisi_adres" Association="Self.FK_arizamusterisi_adres">
+            <End Role="adres" EntitySet="adres" />
+            <End Role="arizamusterisi" EntitySet="arizamusterisi" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ilce_il" Association="Self.FK_ilce_il">
+            <End Role="il" EntitySet="il" />
+            <End Role="ilce" EntitySet="ilce" />
+          </AssociationSet>
+          <AssociationSet Name="FK_personel_adres" Association="Self.FK_personel_adres">
+            <End Role="adres" EntitySet="adres" />
+            <End Role="personel" EntitySet="personel" />
+          </AssociationSet>
+          <AssociationSet Name="FK_personel_personeltip" Association="Self.FK_personel_personeltip">
+            <End Role="personeltip" EntitySet="personeltip" />
+            <End Role="personel" EntitySet="personel" />
+          </AssociationSet>
+          <AssociationSet Name="FK_urunfirsat_personel" Association="Self.FK_urunfirsat_personel">
+            <End Role="personel" EntitySet="personel" />
+            <End Role="urunfirsat" EntitySet="urunfirsat" />
+          </AssociationSet>
+          <AssociationSet Name="FK_urunfirsat_urunsiparis" Association="Self.FK_urunfirsat_urunsiparis">
+            <End Role="urunsiparis" EntitySet="urunsiparis" />
+            <End Role="urunfirsat" EntitySet="urunfirsat" />
+          </AssociationSet>
+          <AssociationSet Name="FK_urunmodel_urunkatagori" Association="Self.FK_urunmodel_urunkatagori">
+            <End Role="urunkatagori" EntitySet="urunkatagori" />
+            <End Role="urunmodel" EntitySet="urunmodel" />
+          </AssociationSet>
+          <AssociationSet Name="FK_urunmodel_urunmarka" Association="Self.FK_urunmodel_urunmarka">
+            <End Role="urunmarka" EntitySet="urunmarka" />
+            <End Role="urunmodel" EntitySet="urunmodel" />
+          </AssociationSet>
+          <AssociationSet Name="FK_urunmusteri_adres" Association="Self.FK_urunmusteri_adres">
+            <End Role="adres" EntitySet="adres" />
+            <End Role="urunmusteri" EntitySet="urunmusteri" />
+          </AssociationSet>
+          <AssociationSet Name="FK_urunmusteri_firma" Association="Self.FK_urunmusteri_firma">
+            <End Role="firma" EntitySet="firma" />
+            <End Role="urunmusteri" EntitySet="urunmusteri" />
+          </AssociationSet>
+          <AssociationSet Name="FK_urunsepeti_urunmodel" Association="Self.FK_urunsepeti_urunmodel">
+            <End Role="urunmodel" EntitySet="urunmodel" />
+            <End Role="urunsepeti" EntitySet="urunsepeti" />
+          </AssociationSet>
+          <AssociationSet Name="FK_urunsepeti_urunsiparis" Association="Self.FK_urunsepeti_urunsiparis">
+            <End Role="urunsiparis" EntitySet="urunsiparis" />
+            <End Role="urunsepeti" EntitySet="urunsepeti" />
+          </AssociationSet>
+          <AssociationSet Name="FK_urunsiparis_personel" Association="Self.FK_urunsiparis_personel">
+            <End Role="personel" EntitySet="personel" />
+            <End Role="urunsiparis" EntitySet="urunsiparis" />
+          </AssociationSet>
+          <AssociationSet Name="FK_urunsiparis_urunmusteri" Association="Self.FK_urunsiparis_urunmusteri">
+            <End Role="urunmusteri" EntitySet="urunmusteri" />
+            <End Role="urunsiparis" EntitySet="urunsiparis" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="teknikservisdbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="arizaliurunfotograf">
+          <Key>
+            <PropertyRef Name="arizaliurunfotograf_" />
+          </Key>
+          <Property Name="arizaliurunfotograf_" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="url" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
+          <Property Name="arizaliurun_" Type="Int32" />
+          <NavigationProperty Name="arizaliurun" Relationship="teknikservisdbModel.FK_arizaliurunfotograf_arizaliurun" FromRole="arizaliurunfotograf" ToRole="arizaliurun" />
+        </EntityType>
+        <EntityType Name="arizamusterisi">
+          <Key>
+            <PropertyRef Name="arizamusterisi_" />
+          </Key>
+          <Property Name="arizamusterisi_" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="adi" Type="String" MaxLength="30" FixedLength="true" Unicode="true" />
+          <Property Name="soyadi" Type="String" MaxLength="30" FixedLength="true" Unicode="true" />
+          <Property Name="tel" Type="String" MaxLength="11" FixedLength="true" Unicode="true" />
+          <Property Name="email" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="adres_" Type="Int32" />
+          <NavigationProperty Name="adres" Relationship="teknikservisdbModel.FK_arizamusterisi_adres" FromRole="arizamusterisi" ToRole="adres" />
+          <Property Name="kayittarihi" Type="DateTime" Precision="3" />
+          <Property Name="sil" Type="Boolean" />
+          <NavigationProperty Name="arizaliurun" Relationship="teknikservisdbModel.FK_arizaliurun_arizamusterisi" FromRole="arizamusterisi" ToRole="arizaliurun" />
+        </EntityType>
+        <EntityType Name="personeltip">
+          <Key>
+            <PropertyRef Name="personeltip_" />
+          </Key>
+          <Property Name="personeltip_" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="tipadi" Type="String" MaxLength="30" FixedLength="true" Unicode="true" />
+          <Property Name="aciklama" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+          <NavigationProperty Name="personel" Relationship="teknikservisdbModel.FK_personel_personeltip" FromRole="personeltip" ToRole="personel" />
+        </EntityType>
+        <EntityType Name="urunfirsat">
+          <Key>
+            <PropertyRef Name="urunfirsat_" />
+          </Key>
+          <Property Name="urunfirsat_" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="urunsiparis_" Type="Int32" />
+          <Property Name="personel_" Type="Int32" />
+          <Property Name="asamasayisi" Type="Int32" />
+          <Property Name="firsattarihi" Type="DateTime" Precision="3" />
+          <Property Name="aciklama" Type="String" MaxLength="200" FixedLength="true" Unicode="true" />
+          <NavigationProperty Name="urunsiparis" Relationship="Self.FK_urunfirsat_urunsiparis" FromRole="urunfirsat" ToRole="urunsiparis" />
+          <NavigationProperty Name="personel" Relationship="teknikservisdbModel.FK_urunfirsat_personel" FromRole="urunfirsat" ToRole="personel" />
+        </EntityType>
+        <EntityType Name="urunkatagori">
+          <Key>
+            <PropertyRef Name="urunkatagori_" />
+          </Key>
+          <Property Name="urunkatagori_" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="katagoriadi" Type="String" MaxLength="30" FixedLength="true" Unicode="true" />
+          <Property Name="sil" Type="Boolean" />
+          <NavigationProperty Name="urunmodel" Relationship="teknikservisdbModel.FK_urunmodel_urunkatagori" FromRole="urunkatagori" ToRole="urunmodel" />
+        </EntityType>
+        <EntityType Name="urunmarka">
+          <Key>
+            <PropertyRef Name="urunmarka_" />
+          </Key>
+          <Property Name="urunmarka_" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="markaadi" Type="String" MaxLength="30" FixedLength="true" Unicode="true" />
+          <Property Name="sil" Type="Boolean" />
+          <NavigationProperty Name="urunmodel" Relationship="teknikservisdbModel.FK_urunmodel_urunmarka" FromRole="urunmarka" ToRole="urunmodel" />
+        </EntityType>
+        <EntityType Name="urunsepeti">
+          <Key>
+            <PropertyRef Name="urunsepeti_" />
+          </Key>
+          <Property Name="urunsepeti_" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="urunmodel_" Type="Int32" />
+          <Property Name="urunsiparis_" Type="Int32" />
+          <Property Name="urunsayisi" Type="Int32" />
+          <Property Name="toplamucret" Type="Double" />
+          <NavigationProperty Name="urunsiparis" Relationship="Self.FK_urunsepeti_urunsiparis" FromRole="urunsepeti" ToRole="urunsiparis" />
+          <NavigationProperty Name="urunmodel" Relationship="teknikservisdbModel.FK_urunsepeti_urunmodel" FromRole="urunsepeti" ToRole="urunmodel" />
+        </EntityType>
+        <EntityType Name="urunsiparis">
+          <Key>
+            <PropertyRef Name="urunsiparis_" />
+          </Key>
+          <Property Name="urunsiparis_" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="urunmusteri_" Type="Int32" />
+          <Property Name="siparistarih" Type="DateTime" Precision="3" />
+          <Property Name="toplamucret" Type="Double" />
+          <Property Name="siparisdurumu" Type="Int32" />
+          <Property Name="personel_" Type="Int32" />
+          <NavigationProperty Name="urunfirsat" Relationship="Self.FK_urunfirsat_urunsiparis" FromRole="urunsiparis" ToRole="urunfirsat" />
+          <NavigationProperty Name="urunsepeti" Relationship="Self.FK_urunsepeti_urunsiparis" FromRole="urunsiparis" ToRole="urunsepeti" />
+          <Property Name="odemetip" Type="Int32" />
+          <NavigationProperty Name="personel" Relationship="teknikservisdbModel.FK_urunsiparis_personel" FromRole="urunsiparis" ToRole="personel" />
+          <Property Name="satisfiyat" Type="Double" />
+          <NavigationProperty Name="urunmusteri" Relationship="teknikservisdbModel.FK_urunsiparis_urunmusteri" FromRole="urunsiparis" ToRole="urunmusteri" />
+        </EntityType>
+        <Association Name="FK_urunfirsat_urunsiparis">
+          <End Role="urunsiparis" Type="Self.urunsiparis" Multiplicity="0..1" />
+          <End Role="urunfirsat" Type="Self.urunfirsat" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="urunsiparis">
+              <PropertyRef Name="urunsiparis_" />
+            </Principal>
+            <Dependent Role="urunfirsat">
+              <PropertyRef Name="urunsiparis_" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_urunsepeti_urunsiparis">
+          <End Role="urunsiparis" Type="Self.urunsiparis" Multiplicity="0..1" />
+          <End Role="urunsepeti" Type="Self.urunsepeti" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="urunsiparis">
+              <PropertyRef Name="urunsiparis_" />
+            </Principal>
+            <Dependent Role="urunsepeti">
+              <PropertyRef Name="urunsiparis_" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="teknikservisdbEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="arizaliurunfotograf" EntityType="Self.arizaliurunfotograf" />
+          <EntitySet Name="arizamusterisi" EntityType="Self.arizamusterisi" />
+          <EntitySet Name="personeltip" EntityType="Self.personeltip" />
+          <EntitySet Name="urunfirsat" EntityType="Self.urunfirsat" />
+          <EntitySet Name="urunkatagori" EntityType="Self.urunkatagori" />
+          <EntitySet Name="urunmarka" EntityType="Self.urunmarka" />
+          <EntitySet Name="urunsepeti" EntityType="Self.urunsepeti" />
+          <EntitySet Name="urunsiparis" EntityType="Self.urunsiparis" />
+          <AssociationSet Name="FK_urunfirsat_urunsiparis" Association="Self.FK_urunfirsat_urunsiparis">
+            <End Role="urunsiparis" EntitySet="urunsiparis" />
+            <End Role="urunfirsat" EntitySet="urunfirsat" />
+          </AssociationSet>
+          <AssociationSet Name="FK_urunsepeti_urunsiparis" Association="Self.FK_urunsepeti_urunsiparis">
+            <End Role="urunsiparis" EntitySet="urunsiparis" />
+            <End Role="urunsepeti" EntitySet="urunsepeti" />
+          </AssociationSet>
+          <EntitySet Name="adres" EntityType="teknikservisdbModel.adres" />
+          <EntitySet Name="il" EntityType="teknikservisdbModel.il" />
+          <EntitySet Name="ilce" EntityType="teknikservisdbModel.ilce" />
+          <AssociationSet Name="FK_adres_ilce" Association="teknikservisdbModel.FK_adres_ilce">
+            <End Role="ilce" EntitySet="ilce" />
+            <End Role="adres" EntitySet="adres" />
+          </AssociationSet>
+          <AssociationSet Name="FK_arizamusterisi_adres" Association="teknikservisdbModel.FK_arizamusterisi_adres">
+            <End Role="adres" EntitySet="adres" />
+            <End Role="arizamusterisi" EntitySet="arizamusterisi" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ilce_il" Association="teknikservisdbModel.FK_ilce_il">
+            <End Role="il" EntitySet="il" />
+            <End Role="ilce" EntitySet="ilce" />
+          </AssociationSet>
+          <EntitySet Name="firma" EntityType="teknikservisdbModel.firma" />
+          <EntitySet Name="personel" EntityType="teknikservisdbModel.personel" />
+          <AssociationSet Name="FK_personel_adres" Association="teknikservisdbModel.FK_personel_adres">
+            <End Role="adres" EntitySet="adres" />
+            <End Role="personel" EntitySet="personel" />
+          </AssociationSet>
+          <AssociationSet Name="FK_personel_personeltip" Association="teknikservisdbModel.FK_personel_personeltip">
+            <End Role="personeltip" EntitySet="personeltip" />
+            <End Role="personel" EntitySet="personel" />
+          </AssociationSet>
+          <AssociationSet Name="FK_urunfirsat_personel" Association="teknikservisdbModel.FK_urunfirsat_personel">
+            <End Role="personel" EntitySet="personel" />
+            <End Role="urunfirsat" EntitySet="urunfirsat" />
+          </AssociationSet>
+          <AssociationSet Name="FK_urunsiparis_personel" Association="teknikservisdbModel.FK_urunsiparis_personel">
+            <End Role="personel" EntitySet="personel" />
+            <End Role="urunsiparis" EntitySet="urunsiparis" />
+          </AssociationSet>
+          <EntitySet Name="urunmodel" EntityType="teknikservisdbModel.urunmodel" />
+          <AssociationSet Name="FK_urunmodel_urunkatagori" Association="teknikservisdbModel.FK_urunmodel_urunkatagori">
+            <End Role="urunkatagori" EntitySet="urunkatagori" />
+            <End Role="urunmodel" EntitySet="urunmodel" />
+          </AssociationSet>
+          <AssociationSet Name="FK_urunmodel_urunmarka" Association="teknikservisdbModel.FK_urunmodel_urunmarka">
+            <End Role="urunmarka" EntitySet="urunmarka" />
+            <End Role="urunmodel" EntitySet="urunmodel" />
+          </AssociationSet>
+          <AssociationSet Name="FK_urunsepeti_urunmodel" Association="teknikservisdbModel.FK_urunsepeti_urunmodel">
+            <End Role="urunmodel" EntitySet="urunmodel" />
+            <End Role="urunsepeti" EntitySet="urunsepeti" />
+          </AssociationSet>
+          <EntitySet Name="arizaliurun" EntityType="teknikservisdbModel.arizaliurun" />
+          <AssociationSet Name="FK_arizaliurun_arizamusterisi" Association="teknikservisdbModel.FK_arizaliurun_arizamusterisi">
+            <End Role="arizamusterisi" EntitySet="arizamusterisi" />
+            <End Role="arizaliurun" EntitySet="arizaliurun" />
+          </AssociationSet>
+          <AssociationSet Name="FK_arizaliurun_personel" Association="teknikservisdbModel.FK_arizaliurun_personel">
+            <End Role="personel" EntitySet="personel" />
+            <End Role="arizaliurun" EntitySet="arizaliurun" />
+          </AssociationSet>
+          <AssociationSet Name="FK_arizaliurunfotograf_arizaliurun" Association="teknikservisdbModel.FK_arizaliurunfotograf_arizaliurun">
+            <End Role="arizaliurun" EntitySet="arizaliurun" />
+            <End Role="arizaliurunfotograf" EntitySet="arizaliurunfotograf" />
+          </AssociationSet>
+          <EntitySet Name="urunmusteri" EntityType="teknikservisdbModel.urunmusteri" />
+          <AssociationSet Name="FK_urunmusteri_adres" Association="teknikservisdbModel.FK_urunmusteri_adres">
+            <End Role="adres" EntitySet="adres" />
+            <End Role="urunmusteri" EntitySet="urunmusteri" />
+          </AssociationSet>
+          <AssociationSet Name="FK_urunmusteri_firma" Association="teknikservisdbModel.FK_urunmusteri_firma">
+            <End Role="firma" EntitySet="firma" />
+            <End Role="urunmusteri" EntitySet="urunmusteri" />
+          </AssociationSet>
+          <AssociationSet Name="FK_urunsiparis_urunmusteri" Association="teknikservisdbModel.FK_urunsiparis_urunmusteri">
+            <End Role="urunmusteri" EntitySet="urunmusteri" />
+            <End Role="urunsiparis" EntitySet="urunsiparis" />
+          </AssociationSet>
+          <EntitySet Name="arizaliurunasamasi" EntityType="teknikservisdbModel.arizaliurunasamasi" />
+          <AssociationSet Name="FK_arizaliurunasamasi_arizaliurun" Association="teknikservisdbModel.FK_arizaliurunasamasi_arizaliurun">
+            <End Role="arizaliurun" EntitySet="arizaliurun" />
+            <End Role="arizaliurunasamasi" EntitySet="arizaliurunasamasi" />
+          </AssociationSet>
+          <AssociationSet Name="FK_arizaliurunasamasi_personel" Association="teknikservisdbModel.FK_arizaliurunasamasi_personel">
+            <End Role="personel" EntitySet="personel" />
+            <End Role="arizaliurunasamasi" EntitySet="arizaliurunasamasi" />
+          </AssociationSet>
+          </EntityContainer>
+        <EntityType Name="adres">
+          <Key>
+            <PropertyRef Name="adres_" />
+          </Key>
+          <Property Name="adres_" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="acikadres" Type="String" MaxLength="200" FixedLength="true" Unicode="true" />
+          <Property Name="ilce_" Type="Int32" />
+          <NavigationProperty Name="ilce" Relationship="teknikservisdbModel.FK_adres_ilce" FromRole="adres" ToRole="ilce" />
+          <NavigationProperty Name="arizamusterisi" Relationship="teknikservisdbModel.FK_arizamusterisi_adres" FromRole="adres" ToRole="arizamusterisi" />
+          <NavigationProperty Name="personel" Relationship="teknikservisdbModel.FK_personel_adres" FromRole="adres" ToRole="personel" />
+          <NavigationProperty Name="urunmusteri" Relationship="teknikservisdbModel.FK_urunmusteri_adres" FromRole="adres" ToRole="urunmusteri" />
+        </EntityType>
+        <EntityType Name="il">
+          <Key>
+            <PropertyRef Name="il_" />
+          </Key>
+          <Property Name="il_" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="plakakodu" Type="Int32" />
+          <Property Name="iladi" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+          <NavigationProperty Name="ilce" Relationship="teknikservisdbModel.FK_ilce_il" FromRole="il" ToRole="ilce" />
+        </EntityType>
+        <EntityType Name="ilce">
+          <Key>
+            <PropertyRef Name="ilce_" />
+          </Key>
+          <Property Name="ilce_" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="il_" Type="Int32" />
+          <Property Name="ilceadi" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+          <NavigationProperty Name="adres" Relationship="teknikservisdbModel.FK_adres_ilce" FromRole="ilce" ToRole="adres" />
+          <NavigationProperty Name="il" Relationship="teknikservisdbModel.FK_ilce_il" FromRole="ilce" ToRole="il" />
+        </EntityType>
+        <Association Name="FK_adres_ilce">
+          <End Type="teknikservisdbModel.ilce" Role="ilce" Multiplicity="0..1" />
+          <End Type="teknikservisdbModel.adres" Role="adres" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ilce">
+              <PropertyRef Name="ilce_" />
+            </Principal>
+            <Dependent Role="adres">
+              <PropertyRef Name="ilce_" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_arizamusterisi_adres">
+          <End Type="teknikservisdbModel.adres" Role="adres" Multiplicity="0..1" />
+          <End Type="teknikservisdbModel.arizamusterisi" Role="arizamusterisi" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="adres">
+              <PropertyRef Name="adres_" />
+            </Principal>
+            <Dependent Role="arizamusterisi">
+              <PropertyRef Name="adres_" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ilce_il">
+          <End Type="teknikservisdbModel.il" Role="il" Multiplicity="0..1" />
+          <End Type="teknikservisdbModel.ilce" Role="ilce" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="il">
+              <PropertyRef Name="il_" />
+            </Principal>
+            <Dependent Role="ilce">
+              <PropertyRef Name="il_" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="firma">
+          <Key>
+            <PropertyRef Name="firma_" />
+          </Key>
+          <Property Name="firma_" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="firmaadi" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="tel1" Type="String" MaxLength="11" FixedLength="true" Unicode="true" />
+          <Property Name="tel2" Type="String" MaxLength="11" FixedLength="true" Unicode="true" />
+          <Property Name="email1" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="email2" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="adres_" Type="Int32" />
+          <Property Name="sil" Type="Boolean" />
+          <NavigationProperty Name="urunmusteri" Relationship="teknikservisdbModel.FK_urunmusteri_firma" FromRole="firma" ToRole="urunmusteri" />
+        </EntityType>
+        <EntityType Name="personel">
+          <Key>
+            <PropertyRef Name="personel_" />
+          </Key>
+          <Property Name="personel_" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="tc" Type="String" MaxLength="11" FixedLength="true" Unicode="true" />
+          <Property Name="adi" Type="String" Nullable="false" MaxLength="30" FixedLength="true" Unicode="true" />
+          <Property Name="soyadi" Type="String" MaxLength="30" FixedLength="true" Unicode="true" />
+          <Property Name="tel1" Type="String" MaxLength="11" FixedLength="true" Unicode="true" />
+          <Property Name="email" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="dogumtarihi" Type="DateTime" Precision="0" />
+          <Property Name="sifre" Type="String" MaxLength="32" FixedLength="true" Unicode="true" />
+          <Property Name="personeltip_" Type="Int32" />
+          <Property Name="adres_" Type="Int32" />
+          <Property Name="sil" Type="Boolean" />
+          <Property Name="cinsiyet" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="tel2" Type="String" MaxLength="11" FixedLength="true" Unicode="true" />
+          <Property Name="egitimdurum" Type="Int32" />
+          <Property Name="maas" Type="Double" />
+          <NavigationProperty Name="adres" Relationship="teknikservisdbModel.FK_personel_adres" FromRole="personel" ToRole="adres" />
+          <NavigationProperty Name="personeltip" Relationship="teknikservisdbModel.FK_personel_personeltip" FromRole="personel" ToRole="personeltip" />
+          <NavigationProperty Name="urunfirsat" Relationship="teknikservisdbModel.FK_urunfirsat_personel" FromRole="personel" ToRole="urunfirsat" />
+          <NavigationProperty Name="urunsiparis" Relationship="teknikservisdbModel.FK_urunsiparis_personel" FromRole="personel" ToRole="urunsiparis" />
+          <NavigationProperty Name="arizaliurun" Relationship="teknikservisdbModel.FK_arizaliurun_personel" FromRole="personel" ToRole="arizaliurun" />
+          <NavigationProperty Name="arizaliurunasamasi" Relationship="teknikservisdbModel.FK_arizaliurunasamasi_personel" FromRole="personel" ToRole="arizaliurunasamasi" />
+        </EntityType>
+        <Association Name="FK_personel_adres">
+          <End Type="teknikservisdbModel.adres" Role="adres" Multiplicity="0..1" />
+          <End Type="teknikservisdbModel.personel" Role="personel" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="adres">
+              <PropertyRef Name="adres_" />
+            </Principal>
+            <Dependent Role="personel">
+              <PropertyRef Name="adres_" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_personel_personeltip">
+          <End Type="teknikservisdbModel.personeltip" Role="personeltip" Multiplicity="0..1" />
+          <End Type="teknikservisdbModel.personel" Role="personel" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="personeltip">
+              <PropertyRef Name="personeltip_" />
+            </Principal>
+            <Dependent Role="personel">
+              <PropertyRef Name="personeltip_" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_urunfirsat_personel">
+          <End Type="teknikservisdbModel.personel" Role="personel" Multiplicity="0..1" />
+          <End Type="teknikservisdbModel.urunfirsat" Role="urunfirsat" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="personel">
+              <PropertyRef Name="personel_" />
+            </Principal>
+            <Dependent Role="urunfirsat">
+              <PropertyRef Name="personel_" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_urunsiparis_personel">
+          <End Type="teknikservisdbModel.personel" Role="personel" Multiplicity="0..1" />
+          <End Type="teknikservisdbModel.urunsiparis" Role="urunsiparis" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="personel">
+              <PropertyRef Name="personel_" />
+            </Principal>
+            <Dependent Role="urunsiparis">
+              <PropertyRef Name="personel_" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="urunmodel">
+          <Key>
+            <PropertyRef Name="urunmodel_" />
+          </Key>
+          <Property Name="urunmodel_" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="modeladi" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="modelkodu" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
+          <Property Name="urunmarka_" Type="Int32" />
+          <Property Name="ucret" Type="Double" />
+          <Property Name="urunkatagori_" Type="Int32" />
+          <Property Name="stoksayisi" Type="Int32" />
+          <Property Name="sil" Type="Boolean" />
+          <Property Name="tarih" Type="DateTime" Precision="0" />
+          <NavigationProperty Name="urunkatagori" Relationship="teknikservisdbModel.FK_urunmodel_urunkatagori" FromRole="urunmodel" ToRole="urunkatagori" />
+          <NavigationProperty Name="urunmarka" Relationship="teknikservisdbModel.FK_urunmodel_urunmarka" FromRole="urunmodel" ToRole="urunmarka" />
+          <NavigationProperty Name="urunsepeti" Relationship="teknikservisdbModel.FK_urunsepeti_urunmodel" FromRole="urunmodel" ToRole="urunsepeti" />
+        </EntityType>
+        <Association Name="FK_urunmodel_urunkatagori">
+          <End Type="teknikservisdbModel.urunkatagori" Role="urunkatagori" Multiplicity="0..1" />
+          <End Type="teknikservisdbModel.urunmodel" Role="urunmodel" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="urunkatagori">
+              <PropertyRef Name="urunkatagori_" />
+            </Principal>
+            <Dependent Role="urunmodel">
+              <PropertyRef Name="urunkatagori_" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_urunmodel_urunmarka">
+          <End Type="teknikservisdbModel.urunmarka" Role="urunmarka" Multiplicity="0..1" />
+          <End Type="teknikservisdbModel.urunmodel" Role="urunmodel" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="urunmarka">
+              <PropertyRef Name="urunmarka_" />
+            </Principal>
+            <Dependent Role="urunmodel">
+              <PropertyRef Name="urunmarka_" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_urunsepeti_urunmodel">
+          <End Type="teknikservisdbModel.urunmodel" Role="urunmodel" Multiplicity="0..1" />
+          <End Type="teknikservisdbModel.urunsepeti" Role="urunsepeti" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="urunmodel">
+              <PropertyRef Name="urunmodel_" />
+            </Principal>
+            <Dependent Role="urunsepeti">
+              <PropertyRef Name="urunmodel_" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="arizaliurun">
+          <Key>
+            <PropertyRef Name="arizaliurun_" />
+          </Key>
+          <Property Name="arizaliurun_" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="urunadi" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="urunkodu" Type="String" MaxLength="30" FixedLength="true" Unicode="true" />
+          <Property Name="arizamusterisi_" Type="Int32" />
+          <Property Name="aciklama" Type="String" MaxLength="200" FixedLength="true" Unicode="true" />
+          <Property Name="durumu" Type="Int32" />
+          <Property Name="personel_" Type="Int32" />
+          <Property Name="ariza" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
+          <Property Name="tespitedilenariza" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
+          <Property Name="sifre" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
+          <Property Name="teknikeleman_" Type="Int32" />
+          <Property Name="model" Type="String" MaxLength="80" FixedLength="true" Unicode="true" />
+          <Property Name="urunaksesuar" Type="String" MaxLength="200" FixedLength="true" Unicode="true" />
+          <Property Name="arizabedeli" Type="Double" />
+          <Property Name="serviskapsam" Type="Int32" />
+          <Property Name="kayittarih" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="arizamusterisi" Relationship="teknikservisdbModel.FK_arizaliurun_arizamusterisi" FromRole="arizaliurun" ToRole="arizamusterisi" />
+          <NavigationProperty Name="personel" Relationship="teknikservisdbModel.FK_arizaliurun_personel" FromRole="arizaliurun" ToRole="personel" />
+          <NavigationProperty Name="arizaliurunfotograf" Relationship="teknikservisdbModel.FK_arizaliurunfotograf_arizaliurun" FromRole="arizaliurun" ToRole="arizaliurunfotograf" />
+          <NavigationProperty Name="arizaliurunasamasi" Relationship="teknikservisdbModel.FK_arizaliurunasamasi_arizaliurun" FromRole="arizaliurun" ToRole="arizaliurunasamasi" />
+        </EntityType>
+        <Association Name="FK_arizaliurun_arizamusterisi">
+          <End Type="teknikservisdbModel.arizamusterisi" Role="arizamusterisi" Multiplicity="0..1" />
+          <End Type="teknikservisdbModel.arizaliurun" Role="arizaliurun" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="arizamusterisi">
+              <PropertyRef Name="arizamusterisi_" />
+            </Principal>
+            <Dependent Role="arizaliurun">
+              <PropertyRef Name="arizamusterisi_" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_arizaliurun_personel">
+          <End Type="teknikservisdbModel.personel" Role="personel" Multiplicity="0..1" />
+          <End Type="teknikservisdbModel.arizaliurun" Role="arizaliurun" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="personel">
+              <PropertyRef Name="personel_" />
+            </Principal>
+            <Dependent Role="arizaliurun">
+              <PropertyRef Name="personel_" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_arizaliurunfotograf_arizaliurun">
+          <End Type="teknikservisdbModel.arizaliurun" Role="arizaliurun" Multiplicity="0..1" />
+          <End Type="teknikservisdbModel.arizaliurunfotograf" Role="arizaliurunfotograf" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="arizaliurun">
+              <PropertyRef Name="arizaliurun_" />
+            </Principal>
+            <Dependent Role="arizaliurunfotograf">
+              <PropertyRef Name="arizaliurun_" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="urunmusteri">
+          <Key>
+            <PropertyRef Name="urunmusteri_" />
+          </Key>
+          <Property Name="urunmusteri_" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="adi" Type="String" MaxLength="30" FixedLength="true" Unicode="true" />
+          <Property Name="soyadi" Type="String" MaxLength="30" FixedLength="true" Unicode="true" />
+          <Property Name="tel" Type="String" MaxLength="11" FixedLength="true" Unicode="true" />
+          <Property Name="email" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="adres_" Type="Int32" />
+          <Property Name="musteritip" Type="Int32" />
+          <Property Name="sil" Type="Boolean" />
+          <Property Name="firma_" Type="Int32" />
+          <Property Name="kayittarihi" Type="DateTime" Precision="3" />
+          <Property Name="tel2" Type="String" MaxLength="11" FixedLength="true" Unicode="true" />
+          <Property Name="email2" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+          <NavigationProperty Name="adres" Relationship="teknikservisdbModel.FK_urunmusteri_adres" FromRole="urunmusteri" ToRole="adres" />
+          <NavigationProperty Name="firma" Relationship="teknikservisdbModel.FK_urunmusteri_firma" FromRole="urunmusteri" ToRole="firma" />
+          <NavigationProperty Name="urunsiparis" Relationship="teknikservisdbModel.FK_urunsiparis_urunmusteri" FromRole="urunmusteri" ToRole="urunsiparis" />
+        </EntityType>
+        <Association Name="FK_urunmusteri_adres">
+          <End Type="teknikservisdbModel.adres" Role="adres" Multiplicity="0..1" />
+          <End Type="teknikservisdbModel.urunmusteri" Role="urunmusteri" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="adres">
+              <PropertyRef Name="adres_" />
+            </Principal>
+            <Dependent Role="urunmusteri">
+              <PropertyRef Name="adres_" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_urunmusteri_firma">
+          <End Type="teknikservisdbModel.firma" Role="firma" Multiplicity="0..1" />
+          <End Type="teknikservisdbModel.urunmusteri" Role="urunmusteri" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="firma">
+              <PropertyRef Name="firma_" />
+            </Principal>
+            <Dependent Role="urunmusteri">
+              <PropertyRef Name="firma_" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_urunsiparis_urunmusteri">
+          <End Type="teknikservisdbModel.urunmusteri" Role="urunmusteri" Multiplicity="0..1" />
+          <End Type="teknikservisdbModel.urunsiparis" Role="urunsiparis" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="urunmusteri">
+              <PropertyRef Name="urunmusteri_" />
+            </Principal>
+            <Dependent Role="urunsiparis">
+              <PropertyRef Name="urunmusteri_" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="arizaliurunasamasi">
+          <Key>
+            <PropertyRef Name="arizaliurunasamasi_" />
+          </Key>
+          <Property Name="arizaliurunasamasi_" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="arizaliurun_" Type="Int32" />
+          <Property Name="personel_" Type="Int32" />
+          <Property Name="asamasayisi" Type="Int32" />
+          <Property Name="aciklama" Type="String" MaxLength="200" FixedLength="true" Unicode="true" />
+          <Property Name="gordu" Type="Boolean" />
+          <Property Name="tarih" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="arizaliurun" Relationship="teknikservisdbModel.FK_arizaliurunasamasi_arizaliurun" FromRole="arizaliurunasamasi" ToRole="arizaliurun" />
+          <NavigationProperty Name="personel" Relationship="teknikservisdbModel.FK_arizaliurunasamasi_personel" FromRole="arizaliurunasamasi" ToRole="personel" />
+        </EntityType>
+        <Association Name="FK_arizaliurunasamasi_arizaliurun">
+          <End Type="teknikservisdbModel.arizaliurun" Role="arizaliurun" Multiplicity="0..1" />
+          <End Type="teknikservisdbModel.arizaliurunasamasi" Role="arizaliurunasamasi" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="arizaliurun">
+              <PropertyRef Name="arizaliurun_" />
+            </Principal>
+            <Dependent Role="arizaliurunasamasi">
+              <PropertyRef Name="arizaliurun_" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_arizaliurunasamasi_personel">
+          <End Type="teknikservisdbModel.personel" Role="personel" Multiplicity="0..1" />
+          <End Type="teknikservisdbModel.arizaliurunasamasi" Role="arizaliurunasamasi" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="personel">
+              <PropertyRef Name="personel_" />
+            </Principal>
+            <Dependent Role="arizaliurunasamasi">
+              <PropertyRef Name="personel_" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="teknikservisdbModelStoreContainer" CdmEntityContainer="teknikservisdbEntities">
+          <EntitySetMapping Name="arizaliurunfotograf">
+            <EntityTypeMapping TypeName="teknikservisdbModel.arizaliurunfotograf">
+              <MappingFragment StoreEntitySet="arizaliurunfotograf">
+                <ScalarProperty Name="arizaliurunfotograf_" ColumnName="arizaliurunfotograf_" />
+                <ScalarProperty Name="url" ColumnName="url" />
+                <ScalarProperty Name="arizaliurun_" ColumnName="arizaliurun_" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="arizamusterisi">
+            <EntityTypeMapping TypeName="teknikservisdbModel.arizamusterisi">
+              <MappingFragment StoreEntitySet="arizamusterisi">
+                <ScalarProperty Name="sil" ColumnName="sil" />
+                <ScalarProperty Name="kayittarihi" ColumnName="kayittarihi" />
+                <ScalarProperty Name="arizamusterisi_" ColumnName="arizamusterisi_" />
+                <ScalarProperty Name="adi" ColumnName="adi" />
+                <ScalarProperty Name="soyadi" ColumnName="soyadi" />
+                <ScalarProperty Name="tel" ColumnName="tel" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="adres_" ColumnName="adres_" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="personeltip">
+            <EntityTypeMapping TypeName="teknikservisdbModel.personeltip">
+              <MappingFragment StoreEntitySet="personeltip">
+                <ScalarProperty Name="personeltip_" ColumnName="personeltip_" />
+                <ScalarProperty Name="tipadi" ColumnName="tipadi" />
+                <ScalarProperty Name="aciklama" ColumnName="aciklama" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="urunfirsat">
+            <EntityTypeMapping TypeName="teknikservisdbModel.urunfirsat">
+              <MappingFragment StoreEntitySet="urunfirsat">
+                <ScalarProperty Name="urunfirsat_" ColumnName="urunfirsat_" />
+                <ScalarProperty Name="urunsiparis_" ColumnName="urunsiparis_" />
+                <ScalarProperty Name="personel_" ColumnName="personel_" />
+                <ScalarProperty Name="asamasayisi" ColumnName="asamasayisi" />
+                <ScalarProperty Name="firsattarihi" ColumnName="firsattarihi" />
+                <ScalarProperty Name="aciklama" ColumnName="aciklama" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="urunkatagori">
+            <EntityTypeMapping TypeName="teknikservisdbModel.urunkatagori">
+              <MappingFragment StoreEntitySet="urunkatagori">
+                <ScalarProperty Name="sil" ColumnName="sil" />
+                <ScalarProperty Name="urunkatagori_" ColumnName="urunkatagori_" />
+                <ScalarProperty Name="katagoriadi" ColumnName="katagoriadi" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="urunmarka">
+            <EntityTypeMapping TypeName="teknikservisdbModel.urunmarka">
+              <MappingFragment StoreEntitySet="urunmarka">
+                <ScalarProperty Name="sil" ColumnName="sil" />
+                <ScalarProperty Name="urunmarka_" ColumnName="urunmarka_" />
+                <ScalarProperty Name="markaadi" ColumnName="markaadi" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="urunsepeti">
+            <EntityTypeMapping TypeName="teknikservisdbModel.urunsepeti">
+              <MappingFragment StoreEntitySet="urunsepeti">
+                <ScalarProperty Name="urunsepeti_" ColumnName="urunsepeti_" />
+                <ScalarProperty Name="urunmodel_" ColumnName="urunmodel_" />
+                <ScalarProperty Name="urunsiparis_" ColumnName="urunsiparis_" />
+                <ScalarProperty Name="urunsayisi" ColumnName="urunsayisi" />
+                <ScalarProperty Name="toplamucret" ColumnName="toplamucret" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="urunsiparis">
+            <EntityTypeMapping TypeName="teknikservisdbModel.urunsiparis">
+              <MappingFragment StoreEntitySet="urunsiparis">
+                <ScalarProperty Name="satisfiyat" ColumnName="satisfiyat" />
+                <ScalarProperty Name="odemetip" ColumnName="odemetip" />
+                <ScalarProperty Name="urunsiparis_" ColumnName="urunsiparis_" />
+                <ScalarProperty Name="urunmusteri_" ColumnName="urunmusteri_" />
+                <ScalarProperty Name="siparistarih" ColumnName="siparistarih" />
+                <ScalarProperty Name="toplamucret" ColumnName="toplamucret" />
+                <ScalarProperty Name="siparisdurumu" ColumnName="siparisdurumu" />
+                <ScalarProperty Name="personel_" ColumnName="personel_" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="adres">
+            <EntityTypeMapping TypeName="teknikservisdbModel.adres">
+              <MappingFragment StoreEntitySet="adres">
+                <ScalarProperty Name="ilce_" ColumnName="ilce_" />
+                <ScalarProperty Name="acikadres" ColumnName="acikadres" />
+                <ScalarProperty Name="adres_" ColumnName="adres_" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="il">
+            <EntityTypeMapping TypeName="teknikservisdbModel.il">
+              <MappingFragment StoreEntitySet="il">
+                <ScalarProperty Name="iladi" ColumnName="iladi" />
+                <ScalarProperty Name="plakakodu" ColumnName="plakakodu" />
+                <ScalarProperty Name="il_" ColumnName="il_" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ilce">
+            <EntityTypeMapping TypeName="teknikservisdbModel.ilce">
+              <MappingFragment StoreEntitySet="ilce">
+                <ScalarProperty Name="ilceadi" ColumnName="ilceadi" />
+                <ScalarProperty Name="il_" ColumnName="il_" />
+                <ScalarProperty Name="ilce_" ColumnName="ilce_" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="firma">
+            <EntityTypeMapping TypeName="teknikservisdbModel.firma">
+              <MappingFragment StoreEntitySet="firma">
+                <ScalarProperty Name="sil" ColumnName="sil" />
+                <ScalarProperty Name="adres_" ColumnName="adres_" />
+                <ScalarProperty Name="email2" ColumnName="email2" />
+                <ScalarProperty Name="email1" ColumnName="email1" />
+                <ScalarProperty Name="tel2" ColumnName="tel2" />
+                <ScalarProperty Name="tel1" ColumnName="tel1" />
+                <ScalarProperty Name="firmaadi" ColumnName="firmaadi" />
+                <ScalarProperty Name="firma_" ColumnName="firma_" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="personel">
+            <EntityTypeMapping TypeName="teknikservisdbModel.personel">
+              <MappingFragment StoreEntitySet="personel">
+                <ScalarProperty Name="maas" ColumnName="maas" />
+                <ScalarProperty Name="egitimdurum" ColumnName="egitimdurum" />
+                <ScalarProperty Name="tel2" ColumnName="tel2" />
+                <ScalarProperty Name="cinsiyet" ColumnName="cinsiyet" />
+                <ScalarProperty Name="sil" ColumnName="sil" />
+                <ScalarProperty Name="adres_" ColumnName="adres_" />
+                <ScalarProperty Name="personeltip_" ColumnName="personeltip_" />
+                <ScalarProperty Name="sifre" ColumnName="sifre" />
+                <ScalarProperty Name="dogumtarihi" ColumnName="dogumtarihi" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="tel1" ColumnName="tel1" />
+                <ScalarProperty Name="soyadi" ColumnName="soyadi" />
+                <ScalarProperty Name="adi" ColumnName="adi" />
+                <ScalarProperty Name="tc" ColumnName="tc" />
+                <ScalarProperty Name="personel_" ColumnName="personel_" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="urunmodel">
+            <EntityTypeMapping TypeName="teknikservisdbModel.urunmodel">
+              <MappingFragment StoreEntitySet="urunmodel">
+                <ScalarProperty Name="tarih" ColumnName="tarih" />
+                <ScalarProperty Name="sil" ColumnName="sil" />
+                <ScalarProperty Name="stoksayisi" ColumnName="stoksayisi" />
+                <ScalarProperty Name="urunkatagori_" ColumnName="urunkatagori_" />
+                <ScalarProperty Name="ucret" ColumnName="ucret" />
+                <ScalarProperty Name="urunmarka_" ColumnName="urunmarka_" />
+                <ScalarProperty Name="modelkodu" ColumnName="modelkodu" />
+                <ScalarProperty Name="modeladi" ColumnName="modeladi" />
+                <ScalarProperty Name="urunmodel_" ColumnName="urunmodel_" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="arizaliurun">
+            <EntityTypeMapping TypeName="teknikservisdbModel.arizaliurun">
+              <MappingFragment StoreEntitySet="arizaliurun">
+                <ScalarProperty Name="kayittarih" ColumnName="kayittarih" />
+                <ScalarProperty Name="serviskapsam" ColumnName="serviskapsam" />
+                <ScalarProperty Name="arizabedeli" ColumnName="arizabedeli" />
+                <ScalarProperty Name="urunaksesuar" ColumnName="urunaksesuar" />
+                <ScalarProperty Name="model" ColumnName="model" />
+                <ScalarProperty Name="teknikeleman_" ColumnName="teknikeleman_" />
+                <ScalarProperty Name="sifre" ColumnName="sifre" />
+                <ScalarProperty Name="tespitedilenariza" ColumnName="tespitedilenariza" />
+                <ScalarProperty Name="ariza" ColumnName="ariza" />
+                <ScalarProperty Name="personel_" ColumnName="personel_" />
+                <ScalarProperty Name="durumu" ColumnName="durumu" />
+                <ScalarProperty Name="aciklama" ColumnName="aciklama" />
+                <ScalarProperty Name="arizamusterisi_" ColumnName="arizamusterisi_" />
+                <ScalarProperty Name="urunkodu" ColumnName="urunkodu" />
+                <ScalarProperty Name="urunadi" ColumnName="urunadi" />
+                <ScalarProperty Name="arizaliurun_" ColumnName="arizaliurun_" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="urunmusteri">
+            <EntityTypeMapping TypeName="teknikservisdbModel.urunmusteri">
+              <MappingFragment StoreEntitySet="urunmusteri">
+                <ScalarProperty Name="email2" ColumnName="email2" />
+                <ScalarProperty Name="tel2" ColumnName="tel2" />
+                <ScalarProperty Name="kayittarihi" ColumnName="kayittarihi" />
+                <ScalarProperty Name="firma_" ColumnName="firma_" />
+                <ScalarProperty Name="sil" ColumnName="sil" />
+                <ScalarProperty Name="musteritip" ColumnName="musteritip" />
+                <ScalarProperty Name="adres_" ColumnName="adres_" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="tel" ColumnName="tel" />
+                <ScalarProperty Name="soyadi" ColumnName="soyadi" />
+                <ScalarProperty Name="adi" ColumnName="adi" />
+                <ScalarProperty Name="urunmusteri_" ColumnName="urunmusteri_" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="arizaliurunasamasi">
+            <EntityTypeMapping TypeName="teknikservisdbModel.arizaliurunasamasi">
+              <MappingFragment StoreEntitySet="arizaliurunasamasi">
+                <ScalarProperty Name="tarih" ColumnName="tarih" />
+                <ScalarProperty Name="gordu" ColumnName="gordu" />
+                <ScalarProperty Name="aciklama" ColumnName="aciklama" />
+                <ScalarProperty Name="asamasayisi" ColumnName="asamasayisi" />
+                <ScalarProperty Name="personel_" ColumnName="personel_" />
+                <ScalarProperty Name="arizaliurun_" ColumnName="arizaliurun_" />
+                <ScalarProperty Name="arizaliurunasamasi_" ColumnName="arizaliurunasamasi_" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

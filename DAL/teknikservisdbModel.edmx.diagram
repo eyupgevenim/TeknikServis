@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="1f0fbe9d37d0470588e190246958b355" Name="Diagram1" ZoomLevel="73">
+        <EntityTypeShape EntityType="teknikservisdbModel.arizaliurunfotograf" Width="1.75" PointX="12" PointY="6.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="teknikservisdbModel.arizamusterisi" Width="1.5" PointX="7.5" PointY="6.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="teknikservisdbModel.personeltip" Width="1.5" PointX="8.25" PointY="12" IsExpanded="true" />
+        <EntityTypeShape EntityType="teknikservisdbModel.urunfirsat" Width="1.5" PointX="12.75" PointY="14.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="teknikservisdbModel.urunkatagori" Width="1.5" PointX="13.5" PointY="18.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="teknikservisdbModel.urunmarka" Width="1.5" PointX="13.5" PointY="20.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="teknikservisdbModel.urunsepeti" Width="1.5" PointX="18" PointY="12.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="teknikservisdbModel.urunsiparis" Width="1.5" PointX="15.75" PointY="12.5" IsExpanded="true" />
+        <AssociationConnector Association="teknikservisdbModel.FK_urunfirsat_urunsiparis" ManuallyRouted="false" />
+        <AssociationConnector Association="teknikservisdbModel.FK_urunsepeti_urunsiparis" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="teknikservisdbModel.adres" Width="1.5" PointX="5.25" PointY="10.875" />
+        <EntityTypeShape EntityType="teknikservisdbModel.il" Width="1.5" PointX="0.75" PointY="11.25" />
+        <EntityTypeShape EntityType="teknikservisdbModel.ilce" Width="1.5" PointX="3" PointY="11.125" />
+        <AssociationConnector Association="teknikservisdbModel.FK_adres_ilce" />
+        <AssociationConnector Association="teknikservisdbModel.FK_arizamusterisi_adres" />
+        <AssociationConnector Association="teknikservisdbModel.FK_ilce_il" />
+        <EntityTypeShape EntityType="teknikservisdbModel.firma" Width="1.5" PointX="0.75" PointY="0.75" />
+        <EntityTypeShape EntityType="teknikservisdbModel.personel" Width="1.5" PointX="10.5" PointY="9.75" />
+        <AssociationConnector Association="teknikservisdbModel.FK_personel_adres" />
+        <AssociationConnector Association="teknikservisdbModel.FK_personel_personeltip" />
+        <AssociationConnector Association="teknikservisdbModel.FK_urunfirsat_personel" />
+        <AssociationConnector Association="teknikservisdbModel.FK_urunsiparis_personel" />
+        <EntityTypeShape EntityType="teknikservisdbModel.urunmodel" Width="1.5" PointX="15.75" PointY="18.5" />
+        <AssociationConnector Association="teknikservisdbModel.FK_urunmodel_urunkatagori" />
+        <AssociationConnector Association="teknikservisdbModel.FK_urunmodel_urunmarka" />
+        <AssociationConnector Association="teknikservisdbModel.FK_urunsepeti_urunmodel" />
+        <EntityTypeShape EntityType="teknikservisdbModel.arizaliurun" Width="1.5" PointX="15.75" PointY="6.125" />
+        <AssociationConnector Association="teknikservisdbModel.FK_arizaliurun_arizamusterisi" />
+        <AssociationConnector Association="teknikservisdbModel.FK_arizaliurun_personel" />
+        <AssociationConnector Association="teknikservisdbModel.FK_arizaliurunfotograf_arizaliurun" />
+        <EntityTypeShape EntityType="teknikservisdbModel.urunmusteri" Width="1.5" PointX="10.5" PointY="2" />
+        <AssociationConnector Association="teknikservisdbModel.FK_urunmusteri_adres" />
+        <AssociationConnector Association="teknikservisdbModel.FK_urunmusteri_firma" />
+        <AssociationConnector Association="teknikservisdbModel.FK_urunsiparis_urunmusteri" />
+        <EntityTypeShape EntityType="teknikservisdbModel.arizaliurunasamasi" Width="1.5" PointX="18" PointY="9.125" />
+        <AssociationConnector Association="teknikservisdbModel.FK_arizaliurunasamasi_arizaliurun" />
+        <AssociationConnector Association="teknikservisdbModel.FK_arizaliurunasamasi_personel" />
+        </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

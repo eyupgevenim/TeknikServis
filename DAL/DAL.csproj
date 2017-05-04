@@ -1,0 +1,177 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{FC836B40-C59B-4803-8BA1-E407D936935C}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DAL</RootNamespace>
+    <AssemblyName>DAL</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevExpress.Data.v15.2, Version=15.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.ExpressApp.v15.2, Version=15.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Persistent.Base.v15.2, Version=15.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Persistent.BaseImpl.EF.v15.2, Version=15.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="adres.cs">
+      <DependentUpon>teknikservisdbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="arizaliurun.cs">
+      <DependentUpon>teknikservisdbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="arizaliurunasamasi.cs">
+      <DependentUpon>teknikservisdbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="arizaliurunfotograf.cs">
+      <DependentUpon>teknikservisdbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="arizamusterisi.cs">
+      <DependentUpon>teknikservisdbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="firma.cs">
+      <DependentUpon>teknikservisdbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="il.cs">
+      <DependentUpon>teknikservisdbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ilce.cs">
+      <DependentUpon>teknikservisdbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="personel.cs">
+      <DependentUpon>teknikservisdbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="personeltip.cs">
+      <DependentUpon>teknikservisdbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Siniflar\DAdres.cs" />
+    <Compile Include="Siniflar\DBaglanti.cs" />
+    <Compile Include="Siniflar\DArizalimusterisi.cs" />
+    <Compile Include="Siniflar\DArizaliurun.cs" />
+    <Compile Include="Siniflar\DFirsat.cs" />
+    <Compile Include="Siniflar\DPersonel.cs" />
+    <Compile Include="Siniflar\DSatismusterisi.cs" />
+    <Compile Include="Siniflar\DSiparis.cs" />
+    <Compile Include="Siniflar\DUrun.cs" />
+    <Compile Include="teknikservisdbModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>teknikservisdbModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="teknikservisdbModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>teknikservisdbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="teknikservisdbModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>teknikservisdbModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="urunfirsat.cs">
+      <DependentUpon>teknikservisdbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="urunkatagori.cs">
+      <DependentUpon>teknikservisdbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="urunmarka.cs">
+      <DependentUpon>teknikservisdbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="urunmodel.cs">
+      <DependentUpon>teknikservisdbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="urunmusteri.cs">
+      <DependentUpon>teknikservisdbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="urunsepeti.cs">
+      <DependentUpon>teknikservisdbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="urunsiparis.cs">
+      <DependentUpon>teknikservisdbModel.tt</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\OBJ\OBJ.csproj">
+      <Project>{4481d15f-eff1-46b0-84d8-b22d3961c95a}</Project>
+      <Name>OBJ</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EntityDeploy Include="teknikservisdbModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>teknikservisdbModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.Config" />
+    <None Include="packages.config" />
+    <None Include="teknikservisdbModel.edmx.diagram">
+      <DependentUpon>teknikservisdbModel.edmx</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="teknikservisdbModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>teknikservisdbModel.edmx</DependentUpon>
+      <LastGenOutput>teknikservisdbModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="teknikservisdbModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>teknikservisdbModel.edmx</DependentUpon>
+      <LastGenOutput>teknikservisdbModel.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

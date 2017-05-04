@@ -1,0 +1,581 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{25ECF84F-B36A-42FE-B599-AFA831ABB969}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>TeknikServis</RootNamespace>
+    <AssemblyName>TeknikServis</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevExpress.Data.v15.2, Version=15.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Diagram.v15.2.Core, Version=15.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Office.v15.2.Core, Version=15.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Pdf.v15.2.Core, Version=15.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Printing.v15.2.Core, Version=15.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.RichEdit.v15.2.Core, Version=15.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Sparkline.v15.2.Core, Version=15.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Utils.v15.2, Version=15.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraBars.v15.2, Version=15.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraDiagram.v15.2, Version=15.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraEditors.v15.2, Version=15.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraGrid.v15.2, Version=15.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraLayout.v15.2, Version=15.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraPrinting.v15.2, Version=15.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraRichEdit.v15.2, Version=15.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraVerticalGrid.v15.2, Version=15.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="anaMenu\pnlSatisElemaniAnaMenu.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="anaMenu\pnlSatisElemaniAnaMenu.Designer.cs">
+      <DependentUpon>pnlSatisElemaniAnaMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="anaMenu\pnlSekreter.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="anaMenu\pnlSekreter.Designer.cs">
+      <DependentUpon>pnlSekreter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="anaMenu\pnlTeknikServisEleman.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="anaMenu\pnlTeknikServisEleman.Designer.cs">
+      <DependentUpon>pnlTeknikServisEleman.cs</DependentUpon>
+    </Compile>
+    <Compile Include="anaMenu\pnlYoneticiAsistanAnaMenu.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="anaMenu\pnlYoneticiAsistanAnaMenu.Designer.cs">
+      <DependentUpon>pnlYoneticiAsistanAnaMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ariza\frmArizaliGüncelle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ariza\frmArizaliGüncelle.Designer.cs">
+      <DependentUpon>frmArizaliGüncelle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ariza\pnlTamirEskiKayitlar.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ariza\pnlTamirEskiKayitlar.Designer.cs">
+      <DependentUpon>pnlTamirEskiKayitlar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ariza\pnlTeknikServisTakibi.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ariza\pnlTeknikServisTakibi.Designer.cs">
+      <DependentUpon>pnlTeknikServisTakibi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ariza\frmArizaliMusteriSec.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ariza\frmArizaliMusteriSec.Designer.cs">
+      <DependentUpon>frmArizaliMusteriSec.cs</DependentUpon>
+    </Compile>
+    <Compile Include="musteri\frmMusteriGuncelle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="musteri\frmMusteriGuncelle.Designer.cs">
+      <DependentUpon>frmMusteriGuncelle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="musteri\frmMusteriSec.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="musteri\frmMusteriSec.Designer.cs">
+      <DependentUpon>frmMusteriSec.cs</DependentUpon>
+    </Compile>
+    <Compile Include="musteri\frmFirmaGuncelle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="musteri\frmFirmaGuncelle.Designer.cs">
+      <DependentUpon>frmFirmaGuncelle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="personel\frmBilgileriniGuncelle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="personel\frmBilgileriniGuncelle.Designer.cs">
+      <DependentUpon>frmBilgileriniGuncelle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmLogin.Designer.cs">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ariza\pnlArizaKayit.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ariza\pnlArizaKayit.Designer.cs">
+      <DependentUpon>pnlArizaKayit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ariza\pnlArizaUrunGoruntule.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ariza\pnlArizaUrunGoruntule.Designer.cs">
+      <DependentUpon>pnlArizaUrunGoruntule.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSatisEleman.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSatisEleman.Designer.cs">
+      <DependentUpon>frmSatisEleman.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSekreter.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSekreter.Designer.cs">
+      <DependentUpon>frmSekreter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="personel\frmSifreDegistirme.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="personel\frmSifreDegistirme.Designer.cs">
+      <DependentUpon>frmSifreDegistirme.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmTeknikEleman.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTeknikEleman.Designer.cs">
+      <DependentUpon>frmTeknikEleman.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmYonetici.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmYonetici.Designer.cs">
+      <DependentUpon>frmYonetici.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmYoneticiAsistan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmYoneticiAsistan.Designer.cs">
+      <DependentUpon>frmYoneticiAsistan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="musteri\frmFirmaSec.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="musteri\frmFirmaSec.Designer.cs">
+      <DependentUpon>frmFirmaSec.cs</DependentUpon>
+    </Compile>
+    <Compile Include="musteri\pnlFirmaEkle.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="musteri\pnlFirmaEkle.Designer.cs">
+      <DependentUpon>pnlFirmaEkle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="personel\frmPersonelGuncelle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="personel\frmPersonelGuncelle.Designer.cs">
+      <DependentUpon>frmPersonelGuncelle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="musteri\pnlMusteriekle.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="musteri\pnlMusteriekle.Designer.cs">
+      <DependentUpon>pnlMusteriekle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="musteri\pnlMusteriArama.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="musteri\pnlMusteriArama.Designer.cs">
+      <DependentUpon>pnlMusteriArama.cs</DependentUpon>
+    </Compile>
+    <Compile Include="musteri\pnlMusteriIslemleri.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="musteri\pnlMusteriIslemleri.Designer.cs">
+      <DependentUpon>pnlMusteriIslemleri.cs</DependentUpon>
+    </Compile>
+    <Compile Include="personel\pnlPersonelekle.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="personel\pnlPersonelekle.Designer.cs">
+      <DependentUpon>pnlPersonelekle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="personel\pnlPersonelislemleri.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="personel\pnlPersonelislemleri.Designer.cs">
+      <DependentUpon>pnlPersonelislemleri.cs</DependentUpon>
+    </Compile>
+    <Compile Include="musteri\pnlFirmaListeleme.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="musteri\pnlFirmaListeleme.Designer.cs">
+      <DependentUpon>pnlFirmaListeleme.cs</DependentUpon>
+    </Compile>
+    <Compile Include="anaMenu\pnlYoneticiAnaMenu.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="anaMenu\pnlYoneticiAnaMenu.Designer.cs">
+      <DependentUpon>pnlYoneticiAnaMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ariza\pnlServistekiArizaliUrunler.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ariza\pnlServistekiArizaliUrunler.Designer.cs">
+      <DependentUpon>pnlServistekiArizaliUrunler.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ariza\pnlServisEski.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ariza\pnlServisEski.Designer.cs">
+      <DependentUpon>pnlServisEski.cs</DependentUpon>
+    </Compile>
+    <Compile Include="siparis\pnlEskiSiparis.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="siparis\pnlEskiSiparis.Designer.cs">
+      <DependentUpon>pnlEskiSiparis.cs</DependentUpon>
+    </Compile>
+    <Compile Include="siparis\pnlTeslimEdilmemisSiparis.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="siparis\pnlTeslimEdilmemisSiparis.Designer.cs">
+      <DependentUpon>pnlTeslimEdilmemisSiparis.cs</DependentUpon>
+    </Compile>
+    <Compile Include="siparis\pnlSatislar.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="siparis\pnlSatislar.Designer.cs">
+      <DependentUpon>pnlSatislar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="siparis\pnlSiparisBasla.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="siparis\pnlSiparisBasla.Designer.cs">
+      <DependentUpon>pnlSiparisBasla.cs</DependentUpon>
+    </Compile>
+    <Compile Include="siparis\pnlSiparisListesi.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="siparis\pnlSiparisListesi.Designer.cs">
+      <DependentUpon>pnlSiparisListesi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="siparis\pnlSiparisEkleTemp.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="siparis\pnlSiparisEkleTemp.Designer.cs">
+      <DependentUpon>pnlSiparisEkleTemp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="siparis\pnlSiparisIslem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="siparis\pnlSiparisIslem.Designer.cs">
+      <DependentUpon>pnlSiparisIslem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="siparis\pnlSiparisEkle1.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="siparis\pnlSiparisEkle1.Designer.cs">
+      <DependentUpon>pnlSiparisEkle1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="siparis\pnlSiparisEkle2.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="siparis\pnlSiparisEkle2.Designer.cs">
+      <DependentUpon>pnlSiparisEkle2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="siparis\pnlSiparisEkle3.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="siparis\pnlSiparisEkle3.Designer.cs">
+      <DependentUpon>pnlSiparisEkle3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="siparis\pnlSiparisEkle4.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="siparis\pnlSiparisEkle4.Designer.cs">
+      <DependentUpon>pnlSiparisEkle4.cs</DependentUpon>
+    </Compile>
+    <Compile Include="personel\pnlPersonellistele.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="personel\pnlPersonellistele.Designer.cs">
+      <DependentUpon>pnlPersonellistele.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="stok\frmStokGüncelle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="stok\frmStokGüncelle.Designer.cs">
+      <DependentUpon>frmStokGüncelle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="stok\pnlStokArama.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="stok\pnlStokArama.Designer.cs">
+      <DependentUpon>pnlStokArama.cs</DependentUpon>
+    </Compile>
+    <Compile Include="stok\pnlStokislem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="stok\pnlStokislem.Designer.cs">
+      <DependentUpon>pnlStokislem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="stok\pnlStokUrunEkle.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="stok\pnlStokUrunEkle.Designer.cs">
+      <DependentUpon>pnlStokUrunEkle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="stok\pnlTumUrunListesi.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="stok\pnlTumUrunListesi.Designer.cs">
+      <DependentUpon>pnlTumUrunListesi.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="anaMenu\pnlSatisElemaniAnaMenu.resx">
+      <DependentUpon>pnlSatisElemaniAnaMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="anaMenu\pnlSekreter.resx">
+      <DependentUpon>pnlSekreter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="anaMenu\pnlTeknikServisEleman.resx">
+      <DependentUpon>pnlTeknikServisEleman.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="anaMenu\pnlYoneticiAsistanAnaMenu.resx">
+      <DependentUpon>pnlYoneticiAsistanAnaMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ariza\frmArizaliGüncelle.resx">
+      <DependentUpon>frmArizaliGüncelle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ariza\pnlServistekiArizaliUrunler.resx">
+      <DependentUpon>pnlServistekiArizaliUrunler.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ariza\pnlTamirEskiKayitlar.resx">
+      <DependentUpon>pnlTamirEskiKayitlar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ariza\pnlTeknikServisTakibi.resx">
+      <DependentUpon>pnlTeknikServisTakibi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ariza\frmArizaliMusteriSec.resx">
+      <DependentUpon>frmArizaliMusteriSec.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="musteri\frmMusteriGuncelle.resx">
+      <DependentUpon>frmMusteriGuncelle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="musteri\frmMusteriSec.resx">
+      <DependentUpon>frmMusteriSec.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="musteri\frmFirmaGuncelle.resx">
+      <DependentUpon>frmFirmaGuncelle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="personel\frmBilgileriniGuncelle.resx">
+      <DependentUpon>frmBilgileriniGuncelle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmLogin.resx">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ariza\pnlArizaKayit.resx">
+      <DependentUpon>pnlArizaKayit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ariza\pnlArizaUrunGoruntule.resx">
+      <DependentUpon>pnlArizaUrunGoruntule.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSatisEleman.resx">
+      <DependentUpon>frmSatisEleman.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSekreter.resx">
+      <DependentUpon>frmSekreter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="personel\frmSifreDegistirme.resx">
+      <DependentUpon>frmSifreDegistirme.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTeknikEleman.resx">
+      <DependentUpon>frmTeknikEleman.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmYonetici.resx">
+      <DependentUpon>frmYonetici.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmYoneticiAsistan.resx">
+      <DependentUpon>frmYoneticiAsistan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="musteri\frmFirmaSec.resx">
+      <DependentUpon>frmFirmaSec.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="musteri\pnlFirmaEkle.resx">
+      <DependentUpon>pnlFirmaEkle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="personel\frmPersonelGuncelle.resx">
+      <DependentUpon>frmPersonelGuncelle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="musteri\pnlMusteriekle.resx">
+      <DependentUpon>pnlMusteriekle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="musteri\pnlMusteriArama.resx">
+      <DependentUpon>pnlMusteriArama.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="musteri\pnlMusteriIslemleri.resx">
+      <DependentUpon>pnlMusteriIslemleri.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="personel\pnlPersonelekle.resx">
+      <DependentUpon>pnlPersonelekle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="personel\pnlPersonelislemleri.resx">
+      <DependentUpon>pnlPersonelislemleri.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="musteri\pnlFirmaListeleme.resx">
+      <DependentUpon>pnlFirmaListeleme.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="anaMenu\pnlYoneticiAnaMenu.resx">
+      <DependentUpon>pnlYoneticiAnaMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ariza\pnlServisEski.resx">
+      <DependentUpon>pnlServisEski.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="siparis\pnlEskiSiparis.resx">
+      <DependentUpon>pnlEskiSiparis.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="siparis\pnlTeslimEdilmemisSiparis.resx">
+      <DependentUpon>pnlTeslimEdilmemisSiparis.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="siparis\pnlSatislar.resx">
+      <DependentUpon>pnlSatislar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="siparis\pnlSiparisBasla.resx">
+      <DependentUpon>pnlSiparisBasla.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="siparis\pnlSiparisListesi.resx">
+      <DependentUpon>pnlSiparisListesi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="siparis\pnlSiparisEkleTemp.resx">
+      <DependentUpon>pnlSiparisEkleTemp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="siparis\pnlSiparisIslem.resx">
+      <DependentUpon>pnlSiparisIslem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="siparis\pnlSiparisEkle1.resx">
+      <DependentUpon>pnlSiparisEkle1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="siparis\pnlSiparisEkle2.resx">
+      <DependentUpon>pnlSiparisEkle2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="siparis\pnlSiparisEkle3.resx">
+      <DependentUpon>pnlSiparisEkle3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="siparis\pnlSiparisEkle4.resx">
+      <DependentUpon>pnlSiparisEkle4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="personel\pnlPersonellistele.resx">
+      <DependentUpon>pnlPersonellistele.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="stok\frmStokGüncelle.resx">
+      <DependentUpon>frmStokGüncelle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="stok\pnlStokArama.resx">
+      <DependentUpon>pnlStokArama.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="stok\pnlStokislem.resx">
+      <DependentUpon>pnlStokislem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="stok\pnlStokUrunEkle.resx">
+      <DependentUpon>pnlStokUrunEkle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="stok\pnlTumUrunListesi.resx">
+      <DependentUpon>pnlTumUrunListesi.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BL\BL.csproj">
+      <Project>{57678828-6452-4b43-89cd-8ce4408c21a5}</Project>
+      <Name>BL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DAL\DAL.csproj">
+      <Project>{fc836b40-c59b-4803-8ba1-e407d936935c}</Project>
+      <Name>DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\OBJ\OBJ.csproj">
+      <Project>{4481d15f-eff1-46b0-84d8-b22d3961c95a}</Project>
+      <Name>OBJ</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Content Include="img\logo %281%29.ico" />
+    <None Include="Resources\btn_degistir.Image.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
