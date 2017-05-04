@@ -6,14 +6,14 @@ Tenik Servis ve Stok Takibi [C#, ef,DevExpress]
 - DAL'ın App.Config dosyasınının içindeki 
 
 <code>
-  <connectionStrings>
-    <add name="teknikservisdbEntities" connectionString="metadata=res://*/teknikservisdbModel.csdl
+  &lt;connectionStrings&gt;
+    &lt;add name="teknikservisdbEntities" connectionString="metadata=res://*/teknikservisdbModel.csdl
     |res://*/teknikservisdbModel.ssdl
     |res://*/teknikservisdbModel.msl;provider=System.Data.SqlClient;provider 
     connection string=&quot;data source=SOFTR;initial catalog=teknikservisdb;integrated 
     security=True;MultipleActiveResultSets=True;App=EntityFramework&quot;" 
-    providerName="System.Data.EntityClient" />
-  </connectionStrings>
+    providerName="System.Data.EntityClient" /&gt;
+  &lt;/connectionStrings&gt;
 </code>
 
 kısımında bulunan veritabanı bağlantısı kendi veritabaı connectionStrings göre düzeltmelisiniz.
