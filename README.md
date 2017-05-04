@@ -1,7 +1,14 @@
 # TeknikServis
 Tenik Servis ve Stok Takibi [C#, ef,DevExpress]
 
-<h3> Veritabanı bağlantısının ayarı </h3>
+<h3> Projeyi çalıştıra bilmeniz için </h3>
+- DevExpres ve SQL Server yüklü olmalıdır.
+
+
+<h3> Veritabanı Ayarları </h3>
+- Öncelikle veritabanı "teknikservisdb.bak" backup dosyasını SQL server'a yükleyin
+
+<h4> Veritabanı bağlantısının ayarı </h4>
 
 - DAL'ın App.Config dosyasınının içindeki 
 
@@ -15,12 +22,12 @@ Tenik Servis ve Stok Takibi [C#, ef,DevExpress]
     providerName="System.Data.EntityClient" /&gt;
   &lt;/connectionStrings&gt;
 </code>
-
 kısımında bulunan veritabanı bağlantısı kendi veritabaı connectionStrings göre düzeltmelisiniz.
+<br />
 örnek:
+<br />
 <code>
   connection string=&quot;data source=SOFTR;initial catalog=teknikservisdb;integrated 
 </code>
 
 bendeki server ismi "SOFTR" dır.
- 
